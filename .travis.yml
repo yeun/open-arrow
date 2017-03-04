@@ -1,0 +1,11 @@
+language: bash
+before_deploy:
+- ./build_release
+deploy:
+  provider: releases
+  api_key:
+    secure: IfN8+NuE8cjF+5jSv9wEj2l66gSD75RIgZZTJ/qkasn032lMIFyHicfq4X2p9XbAzEVC3tUOa5XhQnXIhLNv1LNg6mE5D966s9/0BJUjIkP0UscrYFfAEnAqD1ge3CiqZKnLWDwXHj951E5RRHUjMTtKUi0aO8e505HK+V2tSnctK/qtAjO8oWLPSQyzUBpkQMIaw1OOFMaL+eouFrTwykgMpmvAtKwDK1Ne/+hqYVhfZaFBjnQ6HmrPkUIFAyNAWZuLFwTVP19wZfjPQj+Mu9j6OR43lsaicQ5eLZ9AlsRldugkg2wM4TnTB18GpSFBhMHVyiMIZRPop3+VSwdqZSQUSZb91a7P0+R+YkTeI4pcSRwCeJOAnb+MNyXfFbPBvEYaeFRLTyPavbBcMPewsWIlAHaC9fEVOYO7PLWbHctf8MjXktMGK0ya8nBiihWTamq0i5VKfUff5w7hUwzrToRejWxF+Cdd7BhVGsWr6kf5k1Kn0Gad5RTDRkNZWNF+m6F14htnrVN8IO56RZkQnT9ReQjJABJZXnLoumfoyHyL8XZpOQOQzDLRMDUQRCkuh4OsC8r9uASM7/Yj436uk/TumlW5/fbrrYwlMlrI6bpAFTEy1xNgyEZ0zUZ/ecOeuwu7ATpgI64TiPgHQZcwitJvR6yPcYZbK3NKBeaod+s=
+  file: release/open-arrow.zip
+  on:
+    tags: true
+    repo: yeun/open-arrow

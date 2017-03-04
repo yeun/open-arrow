@@ -1,0 +1,54 @@
+//  Basecoat
+//  ───────────────────────────────────
+
+html {
+  box-sizing: border-box;
+  font-size: $font-size-base;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+ol, ul {
+  padding-left: 0;
+}
+ol li {
+  list-style-position: inside;
+  margin-bottom: 1em;
+  line-height: 1.5;
+}
+
+::selection {
+  background: $selection-bg;
+}

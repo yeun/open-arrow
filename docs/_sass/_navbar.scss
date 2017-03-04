@@ -1,0 +1,49 @@
+//  Navbar
+//  ───────────────────────────────────
+
+a.blog-logo {
+  display: inline-block;
+  width: 100px;
+  height: 70px;
+  background: url('../asset/images/logo.svg') no-repeat;
+  background-size: 40px 40px;
+  fill: $oc-gray-0;
+  background-position: center left;
+  vertical-align: top;
+}
+
+.navigation .btn {
+  display: inline-block;
+  margin: 11px 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: $text-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px dotted $text-color;
+  border-radius: 6px;
+  -webkit-user-select: select; // For unselecting text on the page
+     -moz-user-select: select;
+      -ms-user-select: select; // IE10+
+          user-select: select;
+  transition: background   0.2s ease,
+              color        0.1s ease,
+              border-color 0.2s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $oc-red-7;
+    border-color: $oc-red-6;
+    background-color: rgba($oc-red-0, 0.5);
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+.btn-download {
+  float: right;
+}

@@ -1,0 +1,87 @@
+---
+layout: default
+---
+<section class="intro">
+  <h3 class="intro-title">
+    Open Arrow is an <span class="no-wrap">open-source font</span><br>
+    which contains <span class="no-wrap">112 arrow symbols</span><br>
+    between U+2190 and U+21ff
+  </h3>
+</section>
+<section class="section-glyph">
+  <div class="glyph-groups-wrap">
+    <table class="glyph-groups">
+      <tbody>
+      {% assign count = 0 %}
+      {% for third-digit in (9..15) %}
+        {% for last-digit in (0..15) %}
+        <tr class="glyph-group">
+          <td class="col-glyph-name">
+            <div class="glyph-name">
+              {{ site['glyph-name'][count] }}
+            </div>
+            <div class="dash-wrap">
+              <div class="dash"></div>
+            </div>
+          </td>
+          <td class="col-arrow-glyph">
+            <span class="arrow-glyph">&#x{% if third-digit == 10 %}21a{% elsif third-digit == 11 %}21b{% elsif third-digit == 12 %}21c{% elsif third-digit == 13 %}21d{% elsif third-digit == 14 %}21e{% elsif third-digit == 15 %}21f{% else %}21{{ third-digit }}{% endif %}{% if last-digit == 10 %}a{% elsif last-digit == 11 %}b{% elsif last-digit == 12 %}c{% elsif last-digit == 13 %}d{% elsif last-digit == 14 %}e{% elsif last-digit == 15 %}f{% else %}{{ last-digit }}{% endif %}</span>
+          </td>
+          <td class="col-unicode">
+            <code class="unicode">U+{% if third-digit == 10 %}21a{% elsif third-digit == 11 %}21b{% elsif third-digit == 12 %}21c{% elsif third-digit == 13 %}21d{% elsif third-digit == 14 %}21e{% elsif third-digit == 15 %}21f{% else %}21{{ third-digit }}{% endif %}{% if last-digit == 10 %}a{% elsif last-digit == 11 %}b{% elsif last-digit == 12 %}c{% elsif last-digit == 13 %}d{% elsif last-digit == 14 %}e{% elsif last-digit == 15 %}f{% else %}{{ last-digit }}{% endif %}</code>
+          </td>
+          {% assign count = count | plus : 1 %}
+        </tr>
+        {% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="document">
+  <h3 class="section-title">How to use</h3>
+  <ol>
+    <li>To embed <code>open-arrow</code>, copy this code into the <code>&#x0003chead&#x0003e</code> of your HTML document.
+      {% highlight html %}<style>
+  @font-face {
+    font-family: 'open-arrow';
+    src: url('path-to-font-file/OpenArrow-Regular.eot') format('embedded-opentype'),
+         url('path-to-font-file/OpenArrow-Regular.woff2') format('woff2'),
+         url('path-to-font-file/OpenArrow-Regular.woff') format('woff'),
+         url('path-to-font-file/OpenArrow-Regular.otf') format('opentype'),
+         url('path-to-font-file/OpenArrow-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+2190-21ff;
+  }
+</style>{% endhighlight %}
+    </li>
+    <li>Specify <code>open-arrow</code> as the first value of <code>font-family</code>.
+        {% highlight css %}font-family: 'open-arrow', Helvetica, sans-serif;
+{% endhighlight %}
+    </li>
+
+  </ol>
+</section>
+<script type="text/javascript">
+  var rows = $('.glyph-name')
+
+  rows.each(
+    function (index, element) {
+      $(element)
+        .filter(':contains("leftwards")').closest('.glyph-group').addClass("leftwards").end().end()
+        .filter(':contains("upwards")').closest('.glyph-group').addClass("upwards").end().end()
+        .filter(':contains("rightwards")').closest('.glyph-group').addClass("rightwards").end().end()
+        .filter(':contains("right arrow with small circle")').closest('.glyph-group').addClass("rightwards").end().end()
+        .filter(':contains("downwards")').closest('.glyph-group').addClass("downwards").end().end()
+        .filter(':contains("left right")').closest('.glyph-group').addClass("left-right").end().end()
+        .filter(':contains("up down")').closest('.glyph-group').addClass("up-down").end().end()
+        .filter(':contains("north west")').closest('.glyph-group').addClass("north-west").end().end()
+        .filter(':contains("north east")').closest('.glyph-group').addClass("north-east").end().end()
+        .filter(':contains("south east")').closest('.glyph-group').addClass("south-east").end().end()
+        .filter(':contains("south west")').closest('.glyph-group').addClass("south-west").end().end()
+        .filter(':contains("anticlockwise")').closest('.glyph-group').addClass("anticlockwise").end().end()
+        .filter(':contains("clockwise")').closest('.glyph-group').addClass("clockwise").end().end()
+    }
+  );
+</script>

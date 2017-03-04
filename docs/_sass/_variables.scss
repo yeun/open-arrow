@@ -1,0 +1,27 @@
+//  Grid
+//  ───────────────────────────────────
+
+$container-padding-base:     4%;
+$container-padding-lg:       ($container-padding-base * 1.2);
+
+
+//  Typography
+//  ───────────────────────────────────
+
+$font-family-base:      'open-arrow', -apple-system, BlinkMacSystemFont, Lato, Verdana, Arial, sans-serif;
+$font-family-headline:  $font-family-base;
+$font-family-mono:      'Roboto Mono', monospace;
+
+$font-size-base:        16px;
+$line-height-base:      1.5;
+
+$text-color:            $oc-gray-8;
+$link-color:            $oc-blue-5;
+$link-hover-color:      $oc-blue-7;
+
+$selection-bg:          $oc-gray-2;
+
+
+$arrow-glyph-size:      $font-size-base;
+$glyph-group-height:    30px;
+

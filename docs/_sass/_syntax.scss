@@ -1,0 +1,43 @@
+//  Syntax
+//  ───────────────────────────────────
+
+code {
+  font-family: $font-family-mono;
+  padding: 0.02em 0.2em;
+  font-size: 0.9em;
+  border: 1px dashed $oc-gray-6;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.highlight {
+  margin: 1em 0 0;
+  border: 2px dotted $oc-gray-7;
+  border-radius: 4px;
+
+  pre {
+    padding: 0.2em 1.5em;
+    line-height: 1.3;
+  }
+
+  code {
+    font-size: 0.8em;
+    border: none;
+    white-space: pre;
+  }
+
+  * {
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    .nt { color: $oc-blue-7; }
+    .k  { color: $oc-yellow-7; }
+    .p  { color: $oc-gray-6; }
+    .s2 { color: $oc-indigo-7; }
+    .sx { color: $oc-orange-7; }
+    .nb { color: $oc-grape-7; }
+    .nl, .py { color: $oc-teal-7; }
+    .n, .err, .m { color: $oc-violet-7; }
+  }
+}

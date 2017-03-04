@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+release_tag="${TRAVIS_TAG:-"$(git tag | tail -n 1)"}";
+project_root="$(pwd)";
+release_base_dir="$project_root/release";
+
+mkdir -p "$release_base_dir";
+zip release/open-arrow.zip fonts/*
+
+echo "Release $release_tag";
+echo "${TRAVIS_REPO_SLUG:-"origin"}/${TRAVIS_BRANCH:-"master"}";
+echo "release done.";

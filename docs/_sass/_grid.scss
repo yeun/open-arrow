@@ -1,0 +1,57 @@
+//  Clearfix
+//  ───────────────────────────────────
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+
+//  Container
+//  ───────────────────────────────────
+
+.container {
+  @include clearfix();
+  margin-left: auto;
+  margin-right: auto;
+  padding-left:  $container-padding-base;
+  padding-right: $container-padding-base;
+  max-width: 700px;
+  
+  @media (max-width: 543px) {
+    padding-left:  $container-padding-lg;
+    padding-right: $container-padding-lg;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1400px;
+  }
+  @media (min-width: 1800px) {
+    max-width: 2100px;
+  }
+  @media (min-width: 2400px) {
+    max-width: 2700px;
+  }
+  @media (min-width: 2900px) {
+    max-width: 3600px;
+  }
+}
+
+
+//  Mobile
+//  ───────────────────────────────────
+
+@mixin mobile() {
+  @media (max-width: 543px) {
+    @content
+  }
+}

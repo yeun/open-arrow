@@ -1,0 +1,185 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+
+@import '../node_modules/open-color/open-color';
+@import 'variables';
+@import 'grid';
+@import 'basecoat';
+@import 'navbar';
+@import 'syntax';
+
+
+// Embed Open Arrow
+
+@font-face {
+  font-family: 'open-arrow';
+  src: url('../asset/fonts/OpenArrow-Regular.eot') format('embedded-opentype'),
+       url('../asset/fonts/OpenArrow-Regular.woff2') format('woff2'),
+       url('../asset/fonts/OpenArrow-Regular.woff') format('woff'),
+       url('../asset/fonts/OpenArrow-Regular.otf') format('opentype'),
+       url('../asset/fonts/OpenArrow-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+2190-21ff;
+}
+
+.no-wrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.intro-title {
+  margin-top: 30px;
+  font-size: 30px;
+  line-height: 1.4;
+  @include mobile {
+    font-size: 26px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 2.5vw;
+  }
+  @media (min-width: 1800px) {
+    font-size: 2.3vw;
+    line-height: 1.35;
+  }
+  @media (min-width: 2400px) {
+    font-size: 2.1vw;
+    line-height: 1.3;
+  }
+  @media (min-width: 2900px) {
+    font-size: 1.8vw;
+  }
+}
+
+.glyph-groups-wrap {
+  padding: 20px 0;
+  border-top: 2px solid $oc-gray-7;
+  border-bottom: 2px solid $oc-gray-7;
+  -webkit-column-count: 1;
+     -moz-column-count: 1;
+          column-count: 1;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+  -webkit-column-fill: balance;
+     -moz-column-fill: balance;
+          column-fill: balance;
+
+  @media (min-width: 1200px) {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+  @media (min-width: 1800px) {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+  @media (min-width: 2400px) {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+  @media (min-width: 2900px) {
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5;
+  }
+}
+
+table.glyph-groups {
+  width: 100%;
+  table-layout: fixed;
+
+  tbody > tr {
+    vertical-align: middle;
+    -webkit-column-break-inside: avoid;
+              page-break-inside: avoid;
+                   break-inside: avoid;
+    -webkit-column-fill: auto;
+       -moz-column-fill: auto;
+            column-fill: auto;
+  }
+
+  tbody > tr > td {
+    padding: 4px 0;
+
+    @include mobile {
+      padding: 2px 0;
+    }
+
+    &.col-arrow-glyph {
+      width: 50px;
+      text-align: center;
+
+      @include mobile {
+        padding-left: 10px;
+        width: 30px;
+      }
+    }
+
+    &.col-unicode {
+      width: 70px;
+      text-align: right;
+
+      @include mobile {
+        width: 64px;
+      }
+    }
+  }
+}
+
+tr.glyph-group {
+  transition: color 0.1s ease;
+
+  &.leftwards:hover     { color: $oc-teal-7;    & .dash { border-color: $oc-teal-4; } }
+  &.upwards:hover       { color: $oc-violet-7;  & .dash { border-color: $oc-violet-4; } }
+  &.rightwards:hover    { color: $oc-blue-7;    & .dash { border-color: $oc-blue-4; } }
+  &.downwards:hover     { color: $oc-cyan-7;    & .dash { border-color: $oc-cyan-4; } }
+  &.left-right:hover    { color: $oc-red-7;     & .dash { border-color: $oc-red-4; } }
+  &.up-down:hover       { color: $oc-pink-7;    & .dash { border-color: $oc-pink-4; } }
+  &.north-west:hover    { color: $oc-green-7;   & .dash { border-color: $oc-green-4; } }
+  &.north-east:hover    { color: $oc-yellow-7;  & .dash { border-color: $oc-yellow-4; } }
+  &.south-east:hover    { color: $oc-lime-7;    & .dash { border-color: $oc-lime-4; } }
+  &.south-west:hover    { color: $oc-orange-7;  & .dash { border-color: $oc-orange-4; } }
+  &.anticlockwise:hover { color: $oc-grape-7;   & .dash { border-color: $oc-grape-4; } }
+  &.clockwise:hover     { color: $oc-grape-7;   & .dash { border-color: $oc-grape-4; } }
+}
+
+.col-glyph-name {
+  display: flex;
+  flex: 1 auto;
+  justify-content:flex-start;
+  width: 100%;
+}
+
+.glyph-name {
+  display: inline-block;
+  padding-right: 10px;
+  text-transform: capitalize;
+}
+
+.dash-wrap {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 10%;
+  align-items: center;
+
+  .dash {
+    width: 100%;
+    border-bottom: 1px dashed $oc-gray-6;
+  }
+}
+
+.arrow-glyph {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code.unicode {
+  padding: 0;
+  border: none;
+}
+
