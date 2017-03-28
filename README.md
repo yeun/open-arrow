@@ -1,6 +1,6 @@
 # Open Arrow
 
-Open Arrow is an open-source font that contains 112 arrow symbols between U+2190 and U+21ff
+Open Arrow is an open-source font that contains 112 arrow symbols from U+2190 to U+21ff
 
 ## How to use
 
