@@ -24,3 +24,7 @@ Open Arrow is an open-source font that contains 112 arrow symbols from U+2190 to
     ```css
     font-family: 'open-arrow', Helvetica, sans-serif;
     ```
+3. Use it like this:
+    ```
+    &#x2192 Use it like this &#x2190
+    ```
