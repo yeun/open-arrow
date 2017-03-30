@@ -3,7 +3,7 @@ host: 0.0.0.0
 markdown: kramdown
 highlighter: rouge
 
-oa-version: 1.0.0
+oa-version: 1.1.0
 glyph-name: [
   "leftwards arrow",
   "upwards arrow",
